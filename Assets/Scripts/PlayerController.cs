@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public CharacterController controller;
+    public Animator animator;
     public float speed = 30f;
     float rotation = 0f;
     public float rotationSpeed = 20;
@@ -13,7 +14,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+    
     }
 
     // Update is called once per frame
@@ -25,23 +26,27 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.UpArrow))
         {
+            animator.SetBool("running", true);
             moveDir = new Vector3(0, 0, 1);
             moveDir *= speed;
             moveDir = transform.TransformDirection(moveDir);
         }
         if (Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.UpArrow))
         {
+            animator.SetBool("running", false);
             moveDir = new Vector3(0, 0, 0);
         }
 
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
+            animator.SetBool("back_run", true);
             moveDir = new Vector3(0, 0, -1);
             moveDir *= speed;
             moveDir = transform.TransformDirection(moveDir);
         }
         if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
         {
+            animator.SetBool("back_run", false);
             moveDir = new Vector3(0, 0, 0);
         }
 
