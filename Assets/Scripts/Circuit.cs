@@ -8,9 +8,9 @@ public class Circuit : MonoBehaviour, IComponent
     public State [] _pins;
     public Link [] _inputsLinks;
     private State [] _patern;
-    public Bool _completed;
+    public bool _completed;
 
-    void Compute()
+    public void Compute()
     {
         // foreach (_pins)
         if (_pins[0] == State.UNDEFINED)
@@ -21,15 +21,26 @@ public class Circuit : MonoBehaviour, IComponent
         }
     }
 
-    void SetLink(int inputToLink, IComponent comp, int outputToLink)
+    public void SetLink(int inputToLink, IComponent comp, int outputToLink)
     {
         _inputsLinks[inputToLink].c = comp;
         _inputsLinks[inputToLink].pin = outputToLink;
     }
 
-    void Initialize()
+    private void Check()
     {
-        _completed = False;
+        // foreach(_pins)
+        if (_pins[0] == _patern[0])
+        {
+            _completed = true;
+        } else {
+            _completed = false;
+        }
+    }
+
+    public void Initialize()
+    {
+        _completed = false;
         _patern = new State [] {State.G};
         _pins = new State [] {State.UNDEFINED};
         _inputsLinks = new Link [1];

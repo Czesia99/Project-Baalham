@@ -11,14 +11,12 @@ public enum State {
 }
 
 public struct Link {
-    IComponent c;
-    int pin;
+    public IComponent c;
+    public int pin;
 }
 
 public interface IComponent
 {
-    State [] _pins{ get; set; }
-    Link [] _inputsLinks{ get; set; }
     void Compute();
     void Initialize();
     State [] GetStates();

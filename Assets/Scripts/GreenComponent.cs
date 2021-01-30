@@ -20,12 +20,11 @@ public class GreenComponent : MonoBehaviour, IComponent
 
     public void Initialize()
     {
-        _pins = new State[] {State.Green};
+        _pins = new State[] {State.G};
     }
 
     public State [] GetStates()
     {
         return (_pins);
     }
-}
 }
