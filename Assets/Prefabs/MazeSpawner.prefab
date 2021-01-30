@@ -51,7 +51,7 @@ MonoBehaviour:
   Pillar: {fileID: 142476, guid: f3f97a2401feba4479a301d6181e9da6, type: 3}
   Rows: 12
   Columns: 12
-  CellWidth: 7.8
-  CellHeight: 7.8
+  CellWidth: 7.7
+  CellHeight: 7.7
   AddGaps: 0
   GoalPrefab: {fileID: 159624, guid: 850205124263c924ea0aa82f0fdf2673, type: 3}
