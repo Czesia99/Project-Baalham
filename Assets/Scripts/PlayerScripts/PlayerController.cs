@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     Vector3 moveDir = Vector3.zero;
     // private bool onSprint = false;
     private bool attacking = false;
+    public bool openingChest = false;
+    private float chestTimer = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +72,17 @@ public class PlayerController : MonoBehaviour
             moveDir = new Vector3(0, 0, 0);
         }
 
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            openingChest = true;
+        }
+
+        if (chestTimer <= 0)
+        {
+            openingChest = false;
+            chestTimer = 0.5f;
+        }
+        chestTimer = chestTimer -= Time.deltaTime;
         rotation += horizontal * rotationSpeed * Time.deltaTime;
         transform.eulerAngles = new Vector3(0, rotation, 0);
         controller.Move(moveDir * Time.deltaTime);
@@ -103,7 +116,6 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator AttackRoutine()
     {
-        Debug.Log("in routine");
         yield return new WaitForSeconds(3);
     }
 }
