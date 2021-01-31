@@ -7,6 +7,7 @@ public class SceptreChest : MonoBehaviour
     public GameObject player;
     private GameObject baseChest;
     private GameObject openingChest;
+    private GameObject light;
 
     private bool open;
     
@@ -15,6 +16,7 @@ public class SceptreChest : MonoBehaviour
     {
         baseChest = this.transform.GetChild(0).gameObject;
         openingChest = baseChest.transform.GetChild(0).gameObject;
+        light = this.transform.GetChild(2).gameObject;
         open = false;
     }
 
@@ -36,6 +38,7 @@ public class SceptreChest : MonoBehaviour
             openingChest.transform.eulerAngles = new Vector3(-90, 0, 0);
             open = true;
             player.GetComponent<Inventory>().sceptre = true;
+            light.SetActive(false);
         }
     }
 

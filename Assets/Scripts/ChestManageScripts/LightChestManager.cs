@@ -7,20 +7,24 @@ public class LightChestManager : MonoBehaviour
     public GameObject player;
     private GameObject baseChest;
     private GameObject openingChest;
+    private GameObject light;
 
     private float rotation;
     private float rotationSpeed = 10;
     private bool open;
     private float cooldown = 20;
     private float timer;
+    public float Quantity = 10;
 
     // Start is called before the first frame update
     void Start()
     {
         baseChest = this.transform.GetChild(0).gameObject;
         openingChest = baseChest.transform.GetChild(0).gameObject;
+        light = this.transform.GetChild(2).gameObject;
         open = false;
         timer = cooldown;
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -33,6 +37,7 @@ public class LightChestManager : MonoBehaviour
             {
                 timer = cooldown;
                 open = false;
+                light.SetActive(true);
             }
         }
     }
@@ -48,6 +53,7 @@ public class LightChestManager : MonoBehaviour
         {
             openingChest.transform.eulerAngles = new Vector3(-90, 0, 0);
             open = true;
+            light.SetActive(false);
         }
     }
 
