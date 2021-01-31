@@ -972,6 +972,7 @@ GameObject:
   - component: {fileID: 4002076787108658824}
   - component: {fileID: 4002076787108658826}
   - component: {fileID: 4002076787108658827}
+  - component: {fileID: 2036396410978952671}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -1066,6 +1067,19 @@ MonoBehaviour:
   animator: {fileID: 5166685700143919028}
   speed: 10
   rotationSpeed: 100
+--- !u!135 &2036396410978952671
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2264850098172152704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5568275
+  m_Center: {x: -0, y: 0, z: 0}
 --- !u!1 &2363065470766935806
 GameObject:
   m_ObjectHideFlags: 0
