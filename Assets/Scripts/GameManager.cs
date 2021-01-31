@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.AI;
 
 public class GameManager : MonoBehaviour
 {
     public MazeSpawner mazePrefabs;
+
     private MazeSpawner mazeInstance;
+    private Vector3 initPlayerPosition;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         BeginGame();
     }
@@ -16,20 +19,21 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
+        {
             RestartGame();
+        }
     }
 
     private void BeginGame()
     {
         mazeInstance = Instantiate(mazePrefabs) as MazeSpawner;
-
     }
 
-    private void RestartGame()
+    public void RestartGame()
     {
     foreach (Transform child in mazeInstance.transform)
-            GameObject.Destroy(child.gameObject);
-        Destroy(mazeInstance.gameObject);
-        BeginGame();
+           GameObject.Destroy(child.gameObject);
+    Destroy(mazeInstance.gameObject);
+    BeginGame();
     }
 }

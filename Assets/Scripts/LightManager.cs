@@ -7,13 +7,14 @@ public class LightManager : MonoBehaviour
     public float Value;
     public float MinValue;
     public float MaxValue;
-    public float rate; 
+    public float rate;
+    public Light LightComponent;
 
-    private Light lightComponent;
+    private float initValue;
     // Start is called before the first frame update
     void Start()
     {
-        lightComponent = GetComponent<Light>();
+        initValue = Value;
     }
 
     // Update is called once per frame
@@ -28,6 +29,22 @@ public class LightManager : MonoBehaviour
         {
             Value -= (rate / 5) * Time.deltaTime; // Cap at some min value too
         }
-        lightComponent.intensity = Value;
+        LightComponent.intensity = Value;
+    }
+    public void IncreaseLightIntensity(float value)
+    {
+        if (Value + value > MaxValue)
+            LightComponent.intensity = MaxValue - 1;
+        else if (Value + value < MaxValue)
+            LightComponent.intensity += value;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            if (Value >= initValue)
+                other.gameObject.SetActive(false);
+        }
     }
 }
