@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/ChestManageScripts/CrocChest.cs.meta
 guid: f3b0dde28f31972209e40fe79d14b8af
+=======
+guid: 11010158740ce74a8916b446ccf45630
+>>>>>>> ca972921083cfeba267eb18f39de51ff21cb9f02:Assets/Scripts/ChestManageScripts/FourrureChest.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
