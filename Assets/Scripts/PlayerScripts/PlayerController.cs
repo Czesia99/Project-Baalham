@@ -119,9 +119,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            Debug.Log("TEST");
-            transform.position = new Vector3(initPos.x, initPos.y, initPos.z);
-            SceneManager.LoadScene(1);
+           // Debug.Log("TEST");
+            //SceneManager.LoadScene(1);
         }
     }
 }

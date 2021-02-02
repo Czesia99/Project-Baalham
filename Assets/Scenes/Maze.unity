@@ -9535,10 +9535,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1085456054134273348, guid: 9679c32da9f368f469973599627ba8e7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085456054134273348, guid: 9679c32da9f368f469973599627ba8e7,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655101344151318033, guid: 9679c32da9f368f469973599627ba8e7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2655101344151318033, guid: 9679c32da9f368f469973599627ba8e7,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6049751017329476629, guid: 9679c32da9f368f469973599627ba8e7,
         type: 3}
