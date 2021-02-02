@@ -7,6 +7,7 @@ public class LightManager : MonoBehaviour
     public float Value;
     public float MinValue;
     public float MaxValue;
+    public float Qty;
     public float rate;
     public Light LightComponent;
 
@@ -20,10 +21,11 @@ public class LightManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && Qty > 0)
         {
             if (Value < MaxValue)
                 Value += rate * Time.deltaTime; // Cap at some max value too
+            Qty -= (rate / 5) * Time.deltaTime;
         }
         else if (Value > MinValue)
         {
@@ -31,12 +33,12 @@ public class LightManager : MonoBehaviour
         }
         LightComponent.intensity = Value;
     }
-    public void IncreaseLightIntensity(float value)
+    public void IncreaseLightQty(float value)
     {
-        if (Value + value > MaxValue)
-            LightComponent.intensity = MaxValue - 1;
-        else if (Value + value < MaxValue)
-            LightComponent.intensity += value;
+        if (Qty + value > MaxValue)
+            Qty = MaxValue - 1;
+        else if (Qty + value < MaxValue)
+            Qty += value;
     }
 
     private void OnTriggerStay(Collider other)

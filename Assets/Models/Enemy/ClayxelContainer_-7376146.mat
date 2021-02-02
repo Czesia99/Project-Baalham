@@ -23,4 +23,4 @@ Material:
     - _Metallic: 0.487
     - _Smoothness: 0
     m_Colors:
-    - _Emission: {r: 0.0009765625, g: 0.0009765625, b: 0.0009765625, a: 0}
+    - _Emission: {r: 0, g: 0, b: 0, a: 0}
