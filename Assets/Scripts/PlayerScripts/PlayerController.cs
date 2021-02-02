@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,11 +16,13 @@ public class PlayerController : MonoBehaviour
     private bool attacking = false;
     public bool openingChest = false;
     private float chestTimer = 2f;
+    private Vector3 initPos;
 
     // Start is called before the first frame update
     void Start()
     {
-    
+        initPos = this.transform.position;
+        Debug.Log(initPos);
     }
 
     // Update is called once per frame
@@ -110,5 +113,15 @@ public class PlayerController : MonoBehaviour
     IEnumerator AttackRoutine()
     {
         yield return new WaitForSeconds(3);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            Debug.Log("TEST");
+            transform.position = new Vector3(initPos.x, initPos.y, initPos.z);
+            SceneManager.LoadScene(1);
+        }
     }
 }

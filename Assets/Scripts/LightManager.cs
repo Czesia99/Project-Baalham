@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LightManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class LightManager : MonoBehaviour
     public float Qty;
     public float rate;
     public Light LightComponent;
+    public Image LightBar;
 
     private float initValue;
     // Start is called before the first frame update
@@ -32,6 +34,7 @@ public class LightManager : MonoBehaviour
             Value -= (rate / 5) * Time.deltaTime; // Cap at some min value too
         }
         LightComponent.intensity = Value;
+        LightBar.fillAmount = Qty / 10;
     }
     public void IncreaseLightQty(float value)
     {
