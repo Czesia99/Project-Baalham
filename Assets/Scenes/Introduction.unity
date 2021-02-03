@@ -3021,7 +3021,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\tControls:\n\nZQSD or Arrows: Movement\n\nE: Open chests, doors, spaceship
-    \n\nSpace: Light attack\n\n\n"
+    \n\nSpace: Light attack\n\nTab: Modify maze\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3347,6 +3347,7 @@ MonoBehaviour:
   Qty: 10
   rate: 6
   LightComponent: {fileID: 562686062}
+  LightBar: {fileID: 0}
 --- !u!4 &571209837 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 445714, guid: 8d3b36f175a633f429d7bda54c76550d,

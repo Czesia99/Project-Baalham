@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Movement();
-        GetInput();
+        // GetInput();
     }
 
     void Movement()

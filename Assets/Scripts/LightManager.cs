@@ -23,7 +23,7 @@ public class LightManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && Qty > 0)
+        if (Input.GetKey(KeyCode.Space) && Qty > 0)
         {
             if (Value < MaxValue)
                 Value += rate * Time.deltaTime; // Cap at some max value too
