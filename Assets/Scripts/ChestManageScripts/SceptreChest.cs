@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SceptreChest : MonoBehaviour
 {
     public GameObject player;
+    public AudioSource audio;
     private GameObject baseChest;
     private GameObject openingChest;
     private GameObject light;
@@ -38,6 +40,7 @@ public class SceptreChest : MonoBehaviour
             openingChest.transform.eulerAngles = new Vector3(-90, 0, 0);
             open = true;
             player.GetComponent<Inventory>().sceptre = true;
+            audio.Play();
             light.SetActive(false);
         }
     }
